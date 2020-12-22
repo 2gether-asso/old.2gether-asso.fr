@@ -1,0 +1,7 @@
+theme: # Not using a theme
+title: 2GETHER
+description: Site internet de l'association 2GETHER.
+lang: fr
+author: Matiboux
+exclude:
+- README.md
