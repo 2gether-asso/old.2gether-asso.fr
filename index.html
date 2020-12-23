@@ -1,26 +1,18 @@
 ---
 layout: bodyfull
-scripts:
-- countdown.js
 ---
 
 <div id="landing-page">
 	<div class="container-fluid mw-lg">
 		<h1>
 			<a class="brand-title" href="{{ '/' | relative_url }}">
-				<img src="{{ '/assets/img/logo.png' | relative_url }}" alt="2GETHER" /> <!--EJ2Y-->
-				<span class="sr-only">2GETHER</span> <!--4nCN-->
+				<img src="{{ '/assets/img/logo.png' | relative_url }}" alt="2GETHER" />
+				<span class="sr-only">2GETHER</span>
 			</a>
 		</h1>
 
-		<div id="countdown" data-target-time="2020-12-23T17:00:00">
-			<p id="countdown-field"></p>
-			
-			<div id="countdown-display" class="d-none" data-delta-time="0"> <!-- Displays when time is up -->
-				<h2>C'est l'heure ! 2GETHER ouvre bientôt ses portes à tous !</h2> <!--Hy-->
-				<p>Restez attentifs, cette page se rechargera bientôt..</p>
-				<!--N'essayez pas trop de comprendre ce code, cela ne provoquerait que la discorde autour de vous-->
-			</div>
-		</div>
+		<h2>Ça y est ! 2GETHER est prêt à t'accueillir !</h2>
+		<p>Rejoins-nous dès maintenant sur notre serveur Discord :</p>
+		<a href="{{ site.discord.link }}" class="btn btn-dark">Rejoindre 2GETHER <i class="fab fa-discord fa-fw"></i></a>
 	</div>
 </div>
