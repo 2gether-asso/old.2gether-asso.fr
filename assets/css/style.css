@@ -4,7 +4,7 @@
 /** General rules */
 
 h1, h2, h3, h4, h5, h6, p { margin-top: 0 }
-p { margin-bottom: .5rem }
+p + p { margin-top: -.5rem }
 h1 + h2, h2 + h3 { margin-top: 1rem }
 h1 { font-size: 2rem }
 h2 { font-size: 1.5rem }
@@ -110,6 +110,42 @@ body.page-error::before {
 	font-family: 'Courier New';
 	margin: .5rem 0;
 	font-size: 2.5em;
+}
+
+
+/** Header */
+
+#header {
+	padding: 1rem 0;
+}
+#header, #header .container, #header .container-fluid {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#header .brand-title {
+	display: block;
+	color: #fff;
+	font-size: 2em;
+	text-decoration: none;
+}
+#header .brand-title img { height: 100px }
+@media (min-width: 768px) { #header .brand-title.large-logo img { height: 150px } }
+#header .links-wrap a { color: #fff }
+
+
+/** Main */
+
+#main {
+	display: inline-block;
+	background: #f8f8f8;
+	margin: 0;
+	padding: 2rem 0 3rem;
+	flex: 1 0;
+}
+#main.page-error {
+	background: #903030;
+	color: #fff;
 }
 
 
