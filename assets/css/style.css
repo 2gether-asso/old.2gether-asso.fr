@@ -111,3 +111,38 @@ body.page-error::before {
 	margin: .5rem 0;
 	font-size: 2.5em;
 }
+
+
+/** Footer */
+
+#footer {
+	background: #323333;
+	padding: 1em 0 2em;
+	color: #c0c0c0;
+	align-items: center;
+}
+#footer .d-flex {
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+#footer .d-flex > div {
+	min-width: 300px;
+	padding: 0 1em;
+	flex: 1 0;
+}
+#footer *:not(.d-flex) > div + div {
+	margin-top: 1em;
+	padding-top: 1em;
+	border-top: 1px solid #4a4a49;
+}
+#footer ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#footer ul > li .icon-left {
+	margin-right: 5px;
+}
+#footer ul > li .icon-right {
+	margin-left: 5px;
+}
