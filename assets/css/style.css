@@ -1,6 +1,7 @@
 ---
 ---
 
+
 /** General rules */
 
 h1, h2, h3, h4, h5, h6, p { margin-top: 0 }
@@ -182,3 +183,30 @@ body.page-error::before {
 #footer ul > li .icon-right {
 	margin-left: 5px;
 }
+  
+/* Page Title */
+.pagetitle {
+    text-align: center;
+    font-size: 60px;
+    font-family: Steinberg;
+    background: -webkit-linear-gradient(cyan, purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Center Carousel Caption */
+
+.carousel-caption-centered {
+    position: absolute;
+    right: 15%;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial;
+}
+   

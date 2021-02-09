@@ -3,7 +3,9 @@ layout: mainless
 ---
 
 <main id="main">
-	<div class="{% if page.container != 'fluid' %}container{% else %}container-fluid{% endif %} {{ page.container_class }} {% if page.main_columns %}d-flex justify-content-center{% endif %}">
-		{{ content }}
-	</div>
+    <div class="{% if page.container != 'fluid' %}container{% else %}container-fluid{% endif %} {{ page.container_class }} {% if page.main_columns %}d-flex justify-content-center{% endif %}">	
+        {{ content }}
+    </div>
+    
+    
 </main>

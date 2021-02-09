@@ -1,8 +1,13 @@
 <header id="header">
-	<div class="container-fluid mw-lg">
-		<a class="brand-title" href="{{ '/' | relative_url }}">
-			<img src="{{ '/assets/img/logo.png' | relative_url }}" alt="2GETHER" />
-			<span class="sr-only">2GETHER</span>
-		</a>
-	</div>
+    <div class="container">   
+        <div class="row">
+                <a class="brand-title" href="{{ '/' | relative_url }}">
+                    <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="2GETHER" />
+                    <span class="sr-only">2GETHER</span>
+                </a>
+        </div>
+        <div class="row">
+                {% include navbar.html %}
+        </div>
+    </div>
 </header>

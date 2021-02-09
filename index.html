@@ -1,20 +1,18 @@
 ---
-layout: bodyfull
+layout: default
 ---
-
-<div id="landing-page">
-	<div class="container-fluid mw-lg">
-		<h1>
-			<a class="brand-title" href="{{ '/' | relative_url }}">
-				<img src="{{ '/assets/img/logo.png' | relative_url }}" alt="2GETHER" />
-				<span class="sr-only">2GETHER</span>
-			</a>
-		</h1>
-
-		<h2>Ça y est ! 2GETHER est prêt à t'accueillir !</h2>
-		<p>Rejoins-nous dès maintenant sur notre serveur Discord :</p>
-		<a href="{{ site.discord.link }}" class="btn btn-dark">Rejoindre 2GETHER <i class="fab fa-discord fa-fw"></i></a>
-	</div>
-</div>
-
-{% include footer.html transparent=true %}
+<main>
+    <div class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active align-items-center">
+                <img class="d-block w-100" src="{{ '/assets/img/background.png' | relative_url }}" alt="2GETHER" />
+                <div class="carousel-caption-centered">
+                    <img class="d-block w-50 mx-auto" src="{{ '/assets/img/logo.png' | relative_url }}" " alt="2GETHER" /><br>
+                    <h5>Ça y est ! 2GETHER est prêt à t'accueillir !</h5>
+                    <p>Rejoins-nous dès maintenant sur notre serveur Discord :</p>
+                    <a href="{{ site.discord.link }}" class="btn btn-dark">Rejoindre 2GETHER <i class="fab fa-discord fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
