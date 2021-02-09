@@ -1,18 +1,18 @@
 # encoding: utf-8   
 - title: Qui sommes nous ?
-  url: /about.html
+  url: /about
 #- title: Ensemble
-#  url: /wip.html
+#  url: /wip
 #- title: Streams et Vidéos
-#  url: /wip.html
+#  url: /wip
 #- title: Mon espace
-#  url: /wip.html
+#  url: /wip
 #- title: Definitively Not Beat The Game
-#  url: /wip.html
+#  url: /wip
 #  sublinks:
 #    - title: Regles
-#      url: /wip.html
+#      url: /wip
 #    - title: Modes de jeux
-#      url: /wip.html
+#      url: /wip
 #    - title: Differents jeux
-#      url: /wip.html
+#      url: /wip
