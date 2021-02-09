@@ -1,6 +1,11 @@
 ---
 ---
 
+@font-face
+{
+	font-family: Steinberg;
+	src: url({{ '/assets/fonts/Steinberg.ttf' | relative_url }});
+}
 
 /** General rules */
 
@@ -188,7 +193,10 @@ body.page-error::before {
 .pagetitle {
     text-align: center;
     font-size: 60px;
-    font-family: Steinberg;
+    font-family: Steinberg,
+		/* Bootstrap Font-family stack */
+		-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,
+		"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     background: -webkit-linear-gradient(cyan, purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
