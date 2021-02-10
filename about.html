@@ -2,47 +2,37 @@
 layout: default
 ---
 
-<main id="main">
-    
-    <div class="container">
-        <p class="text-center pagetitle">Qui sommes nous ?</p>
-        <img src="{{ '/assets/img/separator.png' | relative_url }}" class="img-fluid"  alt="banner" />
-    </div>
+<h1 class="text-center pagetitle">Qui sommes nous ?</h1>
+<img src="{{ '/assets/img/separator.png' | relative_url }}" class="img-fluid mb-3"  alt="banner" />
 
-    <div class="row justify-content-md-center">
-        <img src="{{ '/assets/img/Helldwin.png' | relative_url }}" style="width: 30%; padding-right: 4px;" alt="Helldwin" class="rounded"/>
-        <img src="{{ '/assets/img/Matiboux.png' | relative_url }}" style="width: 30%;padding-left: 4px;"  alt="Matiboux" class="rounded"/>
-    </div>
-    <br>
-    <div class="card text-center">
-        <div class="card-body">
-            {% comment %}
-                TODO:
-                Add a "go to bottom" link to quickly go to the latest items
-                Or, reorder the items by date, in descending order
-            {% endcomment %}
-            
-            <h5 class="card-title">18/11/2020 - Les Prémices</h5>
-            <p class="card-text">En ce soir si spécial Helldwin et Matiboux eurent une idée <strong>ensemble</strong>, pourquoi ne pas créer un lieu où des personnes des quatres coins de la
-                France pourraient se retrouver et partager des moments convivaux, leurs passions et faire de belles rencontres ! Les jeunes de plus en plus touchés par l'isolement social
-                auraient un petit coup de pouce avec <strong>2GETHER</strong>.</p>
-            <br>
-            <h5 class="card-title">23/12/2020 - Ouverture au public</h5>
-            <p class="card-text">Pour finir l'année en beauté, Helldwin lança une première énigme sur la toile. Le but ultime arriver sur le discord de 2GETHER ! <br>
-                La communauté est belle et bien lancée !</p>
-            <br>
-            <h5 class="card-title">05/01/2021 - Cr&eacuteation de l'association</h5>
-            <p class="card-text">C'est la date de parution au journal officiel pour 2GETHER, désormais la communauté est aussi une association à but non lucratif.</p>
-            
-            <hr />
-            <a href="{{ '/static/statuts.pdf' | relative_url }}" class="card-link">Les Statuts</a>
-            <a href="{{ '/static/règlement_intérieur.pdf' | relative_url }}" class="card-link">Règlement Intérieur</a>
-            <a href="{{ '/static/bureau.pdf' | relative_url }}" class="card-link">Bureau</a>
-        </div>
-    </div>
-    
-</main>
+<div class="row justify-content-md-center mb-3">
+	<img src="{{ '/assets/img/Helldwin.png' | relative_url }}" style="width: 30%; padding-right: 4px;" alt="Helldwin" class="rounded"/>
+	<img src="{{ '/assets/img/Matiboux.png' | relative_url }}" style="width: 30%;padding-left: 4px;"  alt="Matiboux" class="rounded"/>
+</div>
 
-
-
-
+<div class="card text-center">
+	<div class="card-body">
+		{% comment %}
+			TODO:
+			Add a "go to bottom" link to quickly go to the latest items
+			Or, reorder the items by date, in descending order
+		{% endcomment %}
+		
+		<h5 class="card-title">18/11/2020 - Les Prémices</h5>
+		<p class="card-text">En ce soir si spécial Helldwin et Matiboux eurent une idée <strong>ensemble</strong>, pourquoi ne pas créer un lieu où des personnes des quatres coins de la
+			France pourraient se retrouver et partager des moments convivaux, leurs passions et faire de belles rencontres ! Les jeunes de plus en plus touchés par l'isolement social
+			auraient un petit coup de pouce avec <strong>2GETHER</strong>.</p>
+		<br>
+		<h5 class="card-title">23/12/2020 - Ouverture au public</h5>
+		<p class="card-text">Pour finir l'année en beauté, Helldwin lança une première énigme sur la toile. Le but ultime arriver sur le discord de 2GETHER ! <br>
+			La communauté est belle et bien lancée !</p>
+		<br>
+		<h5 class="card-title">05/01/2021 - Cr&eacuteation de l'association</h5>
+		<p class="card-text">C'est la date de parution au journal officiel pour 2GETHER, désormais la communauté est aussi une association à but non lucratif.</p>
+		
+		<hr />
+		<a href="{{ '/static/statuts.pdf' | relative_url }}" class="card-link">Les Statuts</a>
+		<a href="{{ '/static/règlement_intérieur.pdf' | relative_url }}" class="card-link">Règlement Intérieur</a>
+		<a href="{{ '/static/bureau.pdf' | relative_url }}" class="card-link">Bureau</a>
+	</div>
+</div>
