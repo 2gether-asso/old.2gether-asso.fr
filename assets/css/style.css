@@ -191,6 +191,7 @@ body.page-error::before {
   
 /* Page Title */
 .pagetitle {
+	line-height: 1;
     text-align: center;
     font-size: 60px;
     font-family: Steinberg,
