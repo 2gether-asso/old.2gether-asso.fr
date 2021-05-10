@@ -5,9 +5,11 @@
 #  url: /wip
 - title: Streams et Vidéos
   url: /tv
+- title: Serveur
+  url: /server
 #- title: Mon espace
 #  url: /wip
-#- title: Definitively Not Beat The Game
+#- title: The Game !
 #  url: /wip
 #  sublinks:
 #    - title: Regles
