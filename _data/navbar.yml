@@ -10,7 +10,7 @@ navbar-right:
 - title: Activités
   url: /
 - title: Serveurs
-  url: /server
+  url: /servers
 - title: Streams et Vidéos
   url: /tv
 
