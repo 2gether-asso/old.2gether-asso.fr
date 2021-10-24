@@ -1,0 +1,19 @@
+// Header
+
+#header {
+	padding: 1rem 0;
+}
+#header, #header .container, #header .container-fluid {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#header .brand-title {
+	display: block;
+	color: #fff;
+	font-size: 2em;
+	text-decoration: none;
+}
+#header .brand-title img { height: 100px }
+@media (min-width: 768px) { #header .brand-title.large-logo img { height: 150px } }
+#header .links-wrap a { color: #fff }

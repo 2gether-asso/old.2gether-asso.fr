@@ -1,0 +1,73 @@
+// General elements
+
+h1, h2, h3, h4, h5, h6, p { margin-top: 0 }
+p + p { margin-top: -.5rem }
+h1 + h2, h2 + h3 { margin-top: 1rem }
+h1 { font-size: 2rem }
+h2 { font-size: 1.5rem }
+h3 { font-size: 1.25rem }
+h4 { font-size: 1rem }
+h5 { font-size: .75rem }
+h6 { font-size: .5rem }
+
+a { color: #50a0f0 }
+a:hover { color: #4080c0 }
+
+hr { border-color: #e8e9ea }
+
+@media (min-width: 576px) { .mw-sm { max-width: 540px } }
+@media (min-width: 768px) { .mw-md { max-width: 720px } }
+@media (min-width: 992px) { .mw-lg { max-width: 960px } }
+@media (min-width: 1200px) { .mw-xl { max-width: 1140px } }
+
+// Document
+
+html {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	flex-direction: column;
+	font-size: 14px;
+	color: #323333;
+	overflow-x: hidden;
+}
+@media print { body { color: #000 } }
+
+body::after {
+	/** Standard background */
+	content: "";
+	background: #05010a;
+	background-image: url('img/background.png');
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+}
+body.page-error::after {
+	opacity: 0.5;
+}
+body.page-error::before {
+	/** Red overlay */
+	content: "";
+	background: linear-gradient(0, #903030, #602020);
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -2;
+}

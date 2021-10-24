@@ -1,0 +1,19 @@
+// Landing Page
+
+#landing-page {
+	display: flex;
+	/* margin: 0; */
+	/* padding: 2rem 0 3rem; */
+	flex: 1 0;
+	/* flex-direction: column; */
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #f0f0f0;
+}
+
+#landing-page img {
+	display: block;
+	max-width: 400px;
+	margin: 1em auto;
+}

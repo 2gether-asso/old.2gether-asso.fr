@@ -1,0 +1,13 @@
+// Countdown
+
+#countdown {
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+}
+#countdown #countdown-title { font-variant: small-caps }
+#countdown #countdown-field {
+	font-family: 'Courier New';
+	margin: .5rem 0;
+	font-size: 2.5em;
+}

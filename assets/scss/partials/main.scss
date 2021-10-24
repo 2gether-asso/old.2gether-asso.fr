@@ -1,0 +1,13 @@
+// Main
+
+#main {
+	display: inline-block;
+	background: #f8f8f8;
+	margin: 0;
+	padding: 2rem 0 3rem;
+	flex: 1 0;
+}
+#main.page-error {
+	background: #903030;
+	color: #fff;
+}
