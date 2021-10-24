@@ -1,19 +1,85 @@
 // Header
 
 #header {
-	padding: 1rem 0;
-}
-#header, #header .container, #header .container-fluid {
 	display: flex;
+	padding: 0 10px;
 	justify-content: space-between;
 	align-items: center;
+	text-align: center;
+
+	a {
+		color: #fff;
+	}
+
+	> .navbar {
+		display: flex;
+		padding: 10px 0;
+		justify-content: center;
+		align-items: center;
+		flex-grow: 1;
+
+		> .navbar-left, > .navbar-right {
+			display: flex;
+			margin: 0;
+			padding: 0;
+			justify-content: center;
+			align-items: center;
+			flex: 1 1 0;
+			list-style: none;
+			font-variant-caps: small-caps;
+
+			li {
+				margin: 0 5px;
+
+				> a {
+					display: block;
+					padding: 10px;
+					border-radius: 9999px;
+
+					&:hover {
+						background-color: rgba($color: #fff, $alpha: .2);
+					}
+				}
+			}
+		}
+		> .navbar-left {
+			margin-right: 1rem;
+			justify-content: right;
+		}
+		> .navbar-right {
+			margin-left: 1rem;
+			justify-content: left;
+		}
+
+		> .brand-title {
+			display: block;
+			flex: 0 1 0;
+			flex-basis: auto;
+			color: #fff;
+			font-size: 2em;
+			text-decoration: none;
+
+			img {
+				height: 60px;
+			}
+
+			&.large-logo img  {
+				@media (min-width: 768px) {
+					height: 120px;
+				}
+			}
+		}
+	}
+
+	> .account {
+		flex-grow: 0;
+	}
+
+	.dropdown-menu a {
+		color: inherit;
+	}
+
+	// .links-wrap a {
+	// 	color: #fff;
+	// }
 }
-#header .brand-title {
-	display: block;
-	color: #fff;
-	font-size: 2em;
-	text-decoration: none;
-}
-#header .brand-title img { height: 100px }
-@media (min-width: 768px) { #header .brand-title.large-logo img { height: 150px } }
-#header .links-wrap a { color: #fff }

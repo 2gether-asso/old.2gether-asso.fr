@@ -1,12 +1,21 @@
-# encoding: utf-8   
-- title: Qui sommes nous ?
+navbar-left:
+- title: Accueil
+  url: /
+- title: Nous
   url: /about
-#- title: Ensemble
-#  url: /wip
+- title: Créateurs
+  url: /
+
+navbar-right:
+- title: Activités
+  url: /
+- title: Serveurs
+  url: /server
 - title: Streams et Vidéos
   url: /tv
-- title: Serveur
-  url: /server
+
+#- title: Ensemble
+#  url: /wip
 #- title: Mon espace
 #  url: /wip
 #- title: The Game !

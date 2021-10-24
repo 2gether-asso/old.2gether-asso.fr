@@ -1,13 +1,42 @@
 <header id="header">
-    <div class="container">   
-        <div class="row">
-                <a class="brand-title" href="{{ '/' | relative_url }}">
-                    <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="2GETHER" />
-                    <span class="sr-only">2GETHER</span>
-                </a>
+    <div class="navbar">
+        <ul class="navbar-left">
+            {% include navbar_part.html links = site.data.navbar.navbar-left %}
+        </ul>
+        <div class="brand-title">
+            <a class="brand-title" href="{{ '/' | relative_url }}">
+                <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="2GETHER" />
+                <span class="sr-only">2GETHER</span>
+            </a>
         </div>
-        <div class="row">
-                {% include navbar.html %}
-        </div>
+        <ul class="navbar-right">
+            {% include navbar_part.html links = site.data.navbar.navbar-right %}
+        </ul>
     </div>
+
+    <!--
+    <div class="account">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+            <i class="fas fa-user fa-fw"></i>
+            <span class="sr-only">Mon compte</span>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="#">
+                    Connexion
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    Mon profil
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    Déconnexion
+                </a>
+            </li>
+        </ul>
+    </div>
+    -->
 </header>

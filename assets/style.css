@@ -136,28 +136,58 @@ body.page-error::before {
   font-size: 2.5em; }
 
 #header {
-  padding: 1rem 0; }
-
-#header, #header .container, #header .container-fluid {
   display: flex;
+  padding: 0 10px;
   justify-content: space-between;
-  align-items: center; }
-
-#header .brand-title {
-  display: block;
-  color: #fff;
-  font-size: 2em;
-  text-decoration: none; }
-
-#header .brand-title img {
-  height: 100px; }
-
-@media (min-width: 768px) {
-  #header .brand-title.large-logo img {
-    height: 150px; } }
-
-#header .links-wrap a {
-  color: #fff; }
+  align-items: center;
+  text-align: center; }
+  #header a {
+    color: #fff; }
+  #header > .navbar {
+    display: flex;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; }
+    #header > .navbar > .navbar-left, #header > .navbar > .navbar-right {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+      flex: 1 1 0;
+      list-style: none;
+      font-variant-caps: small-caps; }
+      #header > .navbar > .navbar-left li, #header > .navbar > .navbar-right li {
+        margin: 0 5px; }
+        #header > .navbar > .navbar-left li > a, #header > .navbar > .navbar-right li > a {
+          display: block;
+          padding: 10px;
+          border-radius: 9999px; }
+          #header > .navbar > .navbar-left li > a:hover, #header > .navbar > .navbar-right li > a:hover {
+            background-color: rgba(255, 255, 255, 0.2); }
+    #header > .navbar > .navbar-left {
+      margin-right: 1rem;
+      justify-content: right; }
+    #header > .navbar > .navbar-right {
+      margin-left: 1rem;
+      justify-content: left; }
+    #header > .navbar > .brand-title {
+      display: block;
+      flex: 0 1 0;
+      flex-basis: auto;
+      color: #fff;
+      font-size: 2em;
+      text-decoration: none; }
+      #header > .navbar > .brand-title img {
+        height: 60px; }
+      @media (min-width: 768px) {
+        #header > .navbar > .brand-title.large-logo img {
+          height: 120px; } }
+  #header > .account {
+    flex-grow: 0; }
+  #header .dropdown-menu a {
+    color: inherit; }
 
 #main {
   display: inline-block;

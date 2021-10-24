@@ -1,0 +1,27 @@
+{% for link in include.links %}
+    {% assign class = nil %}
+    {% if page.url contains link.url %}
+        {% assign class = 'active' %}
+    {% endif %}
+
+    {% if link.sublinks %}
+        <li class="nav-item dropdown {{ class }}">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ link.title }} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                {% for sublink in link.sublinks %}
+                    <li>
+                        <a class="dropdown-item" href="{{ link.url | relative_url }}">
+                            {{ sublink.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% else %}
+        <li class="{{ class }}">
+            <a class="nav-link" href="{{ link.url | relative_url }}">
+                {{ link.title }}
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}
