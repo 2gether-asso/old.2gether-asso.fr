@@ -1,6 +1,7 @@
 {% for link in include.links %}
     {% assign class = nil %}
-    {% if page.url contains link.url %}
+    {% assign pageUrl = page.url | remove: '.html' %}
+    {% if pageUrl == link.url %}
         {% assign class = 'active' %}
     {% endif %}
 
