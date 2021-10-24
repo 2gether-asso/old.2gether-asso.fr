@@ -4,11 +4,11 @@ navbar-left:
 - title: Nous
   url: /about
 - title: Créateurs
-  url: /
+  url: /creators
 
 navbar-right:
 - title: Activités
-  url: /
+  url: /activities
 - title: Serveurs
   url: /servers
 - title: Streams et Vidéos
