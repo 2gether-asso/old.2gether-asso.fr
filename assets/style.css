@@ -160,6 +160,8 @@ body.page-error::before {
       font-variant-caps: small-caps; }
       #header > .navbar > .navbar-left li, #header > .navbar > .navbar-right li {
         margin: 0 5px; }
+        #header > .navbar > .navbar-left li.active > a, #header > .navbar > .navbar-right li.active > a {
+          background-color: rgba(255, 255, 255, 0.1); }
         #header > .navbar > .navbar-left li > a, #header > .navbar > .navbar-right li > a {
           display: block;
           padding: 10px;
