@@ -12,7 +12,6 @@
 		let prevTranslate = 0
 		let animationID
 		let currentIndex = 0
-		let prevIndex = 0
 
 		// Initialize the slider
 		currentIndex = Math.floor(Math.random() * slideElements.length)
@@ -38,33 +37,37 @@
 
 		// Create event listeners on controls
 		const controlElement = sliderElement.querySelector('.control')
-		const prevElement = controlElement.querySelector('.prev')
-		const nextElement = controlElement.querySelector('.next')
-		const dotElements = Array.from(controlElement.querySelectorAll('[data-slide-set]'))
+		if (controlElement)
+		{
+			const prevElement = controlElement.querySelector('.prev')
+			if (prevElement)
+				prevElement.addEventListener('click', event => {
+					event.preventDefault()
 
-		prevElement.addEventListener('click', event => {
-			event.preventDefault()
+					currentIndex -= 1
+					setPositionByIndex()
+				})
 
-			currentIndex -= 1
-			setPositionByIndex()
-		})
+			const nextElement = controlElement.querySelector('.next')
+			if (nextElement)
+				nextElement.addEventListener('click', event => {
+					event.preventDefault()
 
-		nextElement.addEventListener('click', event => {
-			event.preventDefault()
+					currentIndex += 1
+					setPositionByIndex()
+				})
 
-			currentIndex += 1
-			setPositionByIndex()
-		})
+			const dotElements = Array.from(controlElement.querySelectorAll('[data-slide-set]'))
+			dotElements.forEach((dotElement, index) => {
+				dotElement.addEventListener('click', event => {
+					event.preventDefault()
 
-		dotElements.forEach((dotElement, index) => {
-			dotElement.addEventListener('click', event => {
-				event.preventDefault()
-
-				const dataSlideSet = e.target.getAttribute('data-slide-set')
-				currentIndex = dataSlideSet !== null ? parseInt(dataSlideSet) - 1 : index
-				setPositionByIndex()
+					const dataSlideSet = e.target.getAttribute('data-slide-set')
+					currentIndex = dataSlideSet !== null ? parseInt(dataSlideSet) - 1 : index
+					setPositionByIndex()
+				})
 			})
-		})
+		}
 
 		// Fix position on window resize
 		window.addEventListener('resize', setPositionByIndex)
@@ -122,8 +125,6 @@
 			currentTranslate = currentIndex * -slideElementWidth + (slidesWrapper.offsetWidth - slideElementWidth) / 2
 			// if (currentTranslate > 0) currentTranslate = 0
 			prevTranslate = currentTranslate
-
-			prevIndex = currentIndex
 
 			sliderElement.querySelectorAll('.active')
 				.forEach(e => e.classList.remove('active'))
