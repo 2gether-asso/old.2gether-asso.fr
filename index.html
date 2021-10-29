@@ -1,27 +1,49 @@
 ---
-layout: default
+layout: mainless
+scripts:
+- slider.js
 ---
-<main>
-    <div class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active align-items-center">
-                <img class="d-block w-100" src="{{ '/assets/img/background.png' | relative_url }}" alt="2GETHER" />
-                <div class="carousel-caption-centered">
-                    <img class="d-block w-50 mx-auto" src="{{ '/assets/img/logo.png' | relative_url }}" " alt="2GETHER" /><br>
-                    <h5>Ça y est ! 2GETHER est prêt à t'accueillir !</h5>
-                    <p>Rejoins-nous dès maintenant sur notre serveur Discord :</p>
-                    <a href="{{ site.discord.link }}" class="btn btn-dark">Rejoindre 2GETHER <i class="fab fa-discord fa-fw"></i></a>
-                </div>               
+
+<div id="block-slider" class="block-slider slider" data-slider>
+    <div class="slides">
+        <div class="item" data-slide-id="1" id="slide-1">
+            <img class="slide-image" src="{{ '/assets/img/background.png' | relative_url }}" alt="Fond" />
+            <div class="slide-content slide-content-centered">
+                <img class="d-block w-50 mx-auto" src="{{ '/assets/img/logo.png' | relative_url }}" " alt="2GETHER" /><br>
+                <h5>Ça y est ! 2GETHER est prêt à t'accueillir !</h5>
+                <p>Rejoins-nous dès maintenant sur notre serveur Discord :</p>
+                <a href="{{ site.discord.link }}" class="btn btn-dark">Rejoindre 2GETHER <i class="fab fa-discord fa-fw"></i></a>
             </div>
         </div>
     </div>
-    <div class="row d-flex justify-content-center mt-4">
-        <div class="col-8">
-            <a class="twitter-timeline" data-height="550" data-dnt="true" data-theme="dark" href="https://twitter.com/Asso2Gether?ref_src=twsrc%5Etfw">Tweets by Asso2Gether</a> 
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <!--
+    <div class="control">
+        <a class="prev">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+        </a>
+        <a id="dot-1" data-slide-set="1" class="dot"></a>
+        <a class="next">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+        </a>
+    </div>
+    -->
+</div>
+
+<main id="main">
+    <div class="container">
+        <div class="row d-flex justify-content-center mt-4">
+            <div class="col-8">
+                <a class="twitter-timeline" data-height="550" data-dnt="true" data-theme="dark" href="https://twitter.com/Asso2Gether?ref_src=twsrc%5Etfw">Tweets by Asso2Gether</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="col-4">
+                <iframe src="https://discord.com/widget?id=778692492644188211&theme=dark" width="350" height="550" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
         </div>
-        <div class="col-4">
-            <iframe src="https://discord.com/widget?id=778692492644188211&theme=dark" width="350" height="550" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-        </div>
-    </div>    
+    </div>
 </main>

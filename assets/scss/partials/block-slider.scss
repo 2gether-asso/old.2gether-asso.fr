@@ -1,0 +1,25 @@
+// Slider
+
+#block-slider {
+	background-color: #fff;
+	padding: 5px 0;
+	overflow: initial;
+
+	.slides {
+		> * {
+			position: relative;
+			width: 80%;
+			margin: 0;
+			padding: 0 5px;
+
+			// @media screen and (max-width: 849.995px) {
+			// 	width: 80%;
+			// }
+
+			@media screen and (max-width: 549.995px) {
+				width: 100%;
+			}
+
+		}
+	}
+}
