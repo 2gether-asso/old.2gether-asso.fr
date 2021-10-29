@@ -11,3 +11,12 @@
 	background: #903030;
 	color: #fff;
 }
+
+#main iframe {
+	display: block;
+	// !important to override rules in Twitter's iframe style attribute
+	min-width: initial !important;
+	max-width: 100% !important;
+	margin-left: auto;
+	margin-right: auto;
+}

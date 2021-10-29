@@ -144,6 +144,7 @@ body.page-error::before {
       .slider .slides > * .slide-content {
         position: absolute;
         top: 0;
+        width: 100%;
         padding: 1rem;
         padding-bottom: 2rem;
         color: #fff;
@@ -294,6 +295,13 @@ body.page-error::before {
 #main.page-error {
   background: #903030;
   color: #fff; }
+
+#main iframe {
+  display: block;
+  min-width: initial !important;
+  max-width: 100% !important;
+  margin-left: auto;
+  margin-right: auto; }
 
 #footer {
   background: #323333;
