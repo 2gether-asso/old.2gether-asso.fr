@@ -1,8 +1,9 @@
 <header id="header">
+    <input type="checkbox" id="navbar-toggle-check" />
     <div class="navbar">
-        <div class="navbar-toggle">
+        <label class="navbar-toggle" for="navbar-toggle-check">
             <i class="fas fa-bars fa-fw"></i>
-        </div>
+        </label>
         <ul class="navbar-left">
             {% include navbar_part.html links = site.data.navbar.navbar-left %}
         </ul>
