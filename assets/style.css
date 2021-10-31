@@ -222,26 +222,46 @@ body.page-error::before {
   justify-content: space-between;
   align-items: center;
   text-align: center; }
-  #header a {
+  #header, #header a {
     color: #fff; }
   #header > .navbar {
     display: flex;
     padding: 10px 0;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     flex-grow: 1; }
+    @media (min-width: 576px) {
+      #header > .navbar {
+        justify-content: center; } }
+    #header > .navbar > .navbar-toggle {
+      display: block;
+      margin: 0;
+      padding: 10px;
+      flex: 0 1 0;
+      font-variant-caps: small-caps;
+      cursor: pointer;
+      border-radius: 9999px; }
+      #header > .navbar > .navbar-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.2); }
+      @media (min-width: 576px) {
+        #header > .navbar > .navbar-toggle {
+          display: none; } }
     #header > .navbar > .navbar-left, #header > .navbar > .navbar-right {
-      display: flex;
+      display: none;
       margin: 0;
       padding: 0;
       justify-content: center;
       align-items: center;
       flex: 1 1 0;
+      flex-basis: 100%;
       list-style: none;
       font-variant-caps: small-caps; }
-      @media (max-width: 767.98px) {
+      @media (min-width: 576px) {
         #header > .navbar > .navbar-left, #header > .navbar > .navbar-right {
-          flex-basis: 100%; } }
+          display: flex; } }
+      @media (min-width: 768px) {
+        #header > .navbar > .navbar-left, #header > .navbar > .navbar-right {
+          flex-basis: 0; } }
       #header > .navbar > .navbar-left li, #header > .navbar > .navbar-right li {
         margin: 0 5px; }
         #header > .navbar > .navbar-left li.active > a, #header > .navbar > .navbar-right li.active > a {
@@ -278,7 +298,13 @@ body.page-error::before {
           position: absolute;
           left: 0; } }
       #header > .navbar > .brand-title img {
-        height: 60px; }
+        height: 40px; }
+        @media (min-width: 576px) and (max-width: 767.98px) {
+          #header > .navbar > .brand-title img {
+            height: 60px; } }
+        @media (min-width: 992px) {
+          #header > .navbar > .brand-title img {
+            height: 60px; } }
       @media (min-width: 768px) {
         #header > .navbar > .brand-title.large-logo img {
           height: 120px; } }

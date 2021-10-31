@@ -7,29 +7,56 @@
 	align-items: center;
 	text-align: center;
 
-	a {
+	&, a {
 		color: #fff;
 	}
 
 	> .navbar {
 		display: flex;
 		padding: 10px 0;
-		justify-content: center;
+		justify-content: right;
 		align-items: center;
 		flex-grow: 1;
 
+		@include media-breakpoint-up(sm) {
+			justify-content: center;
+		}
+
+		> .navbar-toggle {
+			display: block;
+			margin: 0;
+			padding: 10px;
+			flex: 0 1 0;
+			font-variant-caps: small-caps;
+			cursor: pointer;
+			border-radius: 9999px;
+
+			&:hover {
+				background-color: rgba($color: #fff, $alpha: .2);
+			}
+
+			@include media-breakpoint-up(sm) {
+				display: none;
+			}
+		}
+
 		> .navbar-left, > .navbar-right {
-			display: flex;
+			display: none;
 			margin: 0;
 			padding: 0;
 			justify-content: center;
 			align-items: center;
 			flex: 1 1 0;
+			flex-basis: 100%;
 			list-style: none;
 			font-variant-caps: small-caps;
 
-			@include media-breakpoint-down(md) {
-				flex-basis: 100%;
+			@include media-breakpoint-up(sm) {
+				display: flex;
+			}
+
+			@include media-breakpoint-up(md) {
+				flex-basis: 0;
 			}
 
 			li {
@@ -83,7 +110,15 @@
 			}
 
 			img {
-				height: 60px;
+				height: 40px;
+
+				@include media-breakpoint-only(sm) {
+					height: 60px;
+				}
+
+				@include media-breakpoint-up(lg) {
+					height: 60px;
+				}
 			}
 
 			&.large-logo img  {
