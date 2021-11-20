@@ -1,22 +1,28 @@
-<footer id="footer" {% if include.transparent %}class="bg-transparent"{% endif %}>
-	<div class="container-fluid mw-lg">
-		<div class="d-flex">
-			<div>
-				<ul>
-					<li>
-						<i class="icon-left fas fa-copyright fa-fw"></i> 2020 – 2GETHER &nbsp;
-						<a href="{{ site.github.repository_url }}#license">
-							<img alt="CC BY-NC 4.0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-nc-sa.svg" />
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="text-right">
-				<ul>
-					<li><a href="{{ '/legal' | relative_url }}">Mentions légales</a></li>
-					<!-- <li><a href="{{ site.github.repository_url }}">Dépot open-source</a> <i class="icon-right fab fa-github fa-fw"></i></li> -->
-				</ul>
-			</div>
+<footer id="footer" class="d-flex flex-wrap justify-content-between align-items-center border-top" {% if
+	include.transparent %}class="bg-transparent" {% endif %}>
+	<div class="container">
+		<div class="row">
+			<p class="col-md-4">
+				<i class="icon-left fas fa-copyright fa-fw"></i> 2020-2021 – 2GETHER &nbsp;
+				<a href="{{ site.github.repository_url }}#license">
+					<img alt="CC BY-NC 4.0"
+						src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-nc-sa.svg" />
+				</a>
+			</p>
+			<a href="/"
+				class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" fill="currentColor" class="bi bi-diamond"
+					viewBox="0 0 16 16">
+					<path
+						d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z" />
+				</svg>
+			</a>
+			<ul class="nav col-md-4 justify-content-end">
+				<li class="nav-item me-2"><a href="{{ '/legal' | relative_url }}">Mentions légales</a></li>
+				<!-- <li class="nav-item me-2"><a href="{{ site.github.repository_url }}">Dépot open-source</a> 
+					<i class="icon-right fab fa-github fa-fw"></i>
+				</li> -->
+			</ul>
 		</div>
 	</div>
 </footer>

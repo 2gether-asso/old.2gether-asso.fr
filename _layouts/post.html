@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div class="post">
+    <p class="text-center pagetitle">{{ page.title }}</p>
+    <img src="{{ '/assets/img/separator.png' | relative_url }}" class="img-fluid mb-2" alt="banner" />
+
+    <div class="row">
+        <div class="content col-10">
+            {% if page.image %}
+            <div class="card border-info mb-3">
+                <img src="{{ page.image | relative_url }}" class="img-fluid" alt="banner" />
+            </div>
+            {% endif %}
+            {{ content }}
+        </div>
+        <div class="col-2">
+            <div class="card border-info mb-3">
+                <div class="card-header">Informations du post</div>
+                <div class="card-body">
+
+                    <p class="metadata date">
+                        <i class="fas fa-calendar-day fa-fw"></i>
+                        {{ page.date | date: "%B %e, %Y" }}
+                    </p>
+                    {% if page.last_updated %}
+                    <p class="metadata last-updated">
+                        <i class="fas fa-pencil-alt fa-fw"></i>
+                        {{ page.last_updated | date: "%B %e, %Y" }}
+                    </p>
+                    {% endif %}
+                    {% if page.categories != empty %}
+                    <p class="metadata categories">
+                        <i class="fas fa-quote-left fa-fw"></i>
+                        <span>{{ page.categories | join: "</span> <span>" }}</span>
+                    </p>
+                    {% endif %}
+                    {% if page.tags != empty %}
+                    <p class="metadata tags">
+                        <i class="fas fa-tag fa-fw"></i>
+                        <span>{{ page.tags | join: "</span> <span>" }}</span>
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
