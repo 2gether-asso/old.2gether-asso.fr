@@ -398,3 +398,9 @@ body.page-error::before {
   background: -webkit-linear-gradient(cyan, purple);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
+
+*:first-child {
+  margin-top: 0; }
+
+*:last-child {
+  margin-bottom: 0; }

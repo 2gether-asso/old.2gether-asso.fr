@@ -13,3 +13,6 @@
 @import "partials/main";
 @import "partials/footer";
 @import "partials/more";
+
+*:first-child { margin-top: 0 }
+*:last-child { margin-bottom: 0 }
