@@ -399,6 +399,10 @@ body.page-error::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
+.post blockquote {
+  border-left: 4px solid rgba(0, 0, 0, 0.15);
+  padding-left: 1em; }
+
 *:first-child {
   margin-top: 0; }
 
