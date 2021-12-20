@@ -329,9 +329,9 @@ body.page-error::before {
     color: inherit; }
 
 #block-slider {
+  display: table;
   background-color: #fff;
-  padding: 5px 0;
-  overflow: initial; }
+  padding: 5px 0; }
   #block-slider .slides > * {
     position: relative;
     width: 80%;

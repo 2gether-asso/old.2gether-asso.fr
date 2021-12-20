@@ -1,9 +1,9 @@
 // Slider
 
 #block-slider {
+	display: table;
 	background-color: #fff;
 	padding: 5px 0;
-	overflow: initial;
 
 	.slides {
 		> * {
