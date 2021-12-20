@@ -2,83 +2,68 @@
 
 	function init(sliderElement)
 	{
-		const slidesWrapper = sliderElement.querySelector('.slides')
-		const slideElements = Array.from(slidesWrapper.querySelectorAll('[data-slide-id]'))
+		const slidesWrapperSelector = sliderElement.querySelector('.slides')
+		if (!slidesWrapperSelector)
+			return
+
+		const slidesWrapper = slidesWrapperSelector // as HTMLElement
+		const slideElements = Array.from(slidesWrapper.querySelectorAll('[data-slide-id]')) // as HTMLElement[]
 
 		// Initialize the slider state
 		let isDragging = false
 		let startPos = 0
 		let currentTranslate = 0
 		let prevTranslate = 0
-		let animationID
-		let currentIndex = 0
+		let animationID = -1
+		let currentIndex = -1
 
 		// Initialize the slider
-		currentIndex = Math.floor(Math.random() * slideElements.length)
+		slideElements.some((slide, index) => {
+			// Initialize the slider current index
+			if (slide.getAttribute('data-slide-active') !== null)
+			{
+				currentIndex = index
+				return true
+			}
+			return false
+		})
+		if (currentIndex < 0) {
+			currentIndex = Math.floor(Math.random() * slideElements.length)
+		}
 		setPositionByIndex()
 
 		// Create event listeners on slides
-		slideElements.forEach(slide => {
-			// disable default image drag
-			Array.from(slide.querySelectorAll('img'))
-				.forEach(e => e.addEventListener('dragstart', e => e.preventDefault()))
+		slideElements.forEach(slide =>
+			{
+				// disable default image drag
+				Array.from(slide.querySelectorAll('img'))
+					.forEach(e => e.addEventListener('dragstart', e => e.preventDefault()))
 
-			// Touch events
-			slide.addEventListener('touchstart', touchStart)
-			slide.addEventListener('touchend', touchEnd)
-			slide.addEventListener('touchmove', touchMove)
+				const boundTouchStart = touchStart.bind(slide)
+				const boundTouchMove = touchMove.bind(slide)
+				const boundTouchEnd = touchEnd.bind(slide)
 
-			// Mouse events
-			slide.addEventListener('mousedown', touchStart)
-			slide.addEventListener('mouseup', touchEnd)
-			slide.addEventListener('mousemove', touchMove)
-			slide.addEventListener('mouseleave', touchEnd)
-		})
+				// Touch events
+				slide.addEventListener('touchstart', boundTouchStart)
+				slide.addEventListener('touchend', boundTouchEnd)
+				slide.addEventListener('touchmove', boundTouchMove)
 
-		// Create event listeners on controls
-		const controlElement = sliderElement.querySelector('.control')
-		if (controlElement)
-		{
-			const prevElement = controlElement.querySelector('.prev')
-			if (prevElement)
-				prevElement.addEventListener('click', event => {
-					event.preventDefault()
-
-					currentIndex -= 1
-					setPositionByIndex()
-				})
-
-			const nextElement = controlElement.querySelector('.next')
-			if (nextElement)
-				nextElement.addEventListener('click', event => {
-					event.preventDefault()
-
-					currentIndex += 1
-					setPositionByIndex()
-				})
-
-			const dotElements = Array.from(controlElement.querySelectorAll('[data-slide-set]'))
-			dotElements.forEach((dotElement, index) => {
-				dotElement.addEventListener('click', event => {
-					event.preventDefault()
-
-					const dataSlideSet = e.target.getAttribute('data-slide-set')
-					currentIndex = dataSlideSet !== null ? parseInt(dataSlideSet) - 1 : index
-					setPositionByIndex()
-				})
+				// Mouse events
+				slide.addEventListener('mousedown', boundTouchStart)
+				slide.addEventListener('mouseup', boundTouchEnd)
+				slide.addEventListener('mousemove', boundTouchMove)
+				slide.addEventListener('mouseleave', boundTouchEnd)
 			})
-		}
 
 		// Fix position on window resize
 		window.addEventListener('resize', setPositionByIndex)
 
-		function getPositionX(event)
+		function getPositionX(event) // (event: any)
 		{
 			return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
 		}
 
-		// use a HOF so we have index in a closure
-		function touchStart(event)
+		function touchStart(event) // (this: HTMLElement, event: any)
 		{
 			startPos = getPositionX(event)
 			isDragging = true
@@ -86,7 +71,7 @@
 			slidesWrapper.classList.add('touch')
 		}
 
-		function touchMove(event)
+		function touchMove(event) // (this: HTMLElement, event: any)
 		{
 			if (isDragging) {
 				const currentPosition = getPositionX(event)
@@ -94,45 +79,79 @@
 			}
 		}
 
-		function touchEnd()
+		function touchEnd() // (this: HTMLElement, event: any)
 		{
 			cancelAnimationFrame(animationID)
+
+			if (isDragging)
+			{
+				const movedBy = currentTranslate - prevTranslate
+				if (movedBy < -100 && currentIndex < slideElements.length - 1)
+				{
+					currentIndex += 1
+				}
+				else if (movedBy > 100 && currentIndex > 0)
+				{
+					currentIndex -= 1
+				}
+				else if (movedBy === 0)
+				{
+					// Simple click
+					const slideId = this.getAttribute('data-slide-id')
+					if (slideId) {
+						const thisIndex = parseInt(slideId) - 1
+						if (currentIndex !== thisIndex)
+						{
+							currentIndex = thisIndex
+						}
+						else
+						{
+							// Open modal
+							document.querySelectorAll('.modal')
+								.forEach(modal => modal.classList.remove('active'))
+							document.querySelectorAll('.modal[data-modal-id="' + slideId + '"]')
+								.forEach(modal => modal.classList.add('active'))
+						}
+					}
+				}
+				setPositionByIndex()
+			}
+
 			isDragging = false
-			const movedBy = currentTranslate - prevTranslate
-
-			if (movedBy < -100 && currentIndex < slideElements.length - 1) currentIndex += 1
-			if (movedBy > 100 && currentIndex > 0) currentIndex -= 1
-			setPositionByIndex()
-
 			slidesWrapper.classList.remove('touch')
 		}
 
 		function animation()
 		{
 			setSliderPosition()
+
 			if (isDragging)
+			{
 				requestAnimationFrame(animation)
+			}
 		}
 
 		function setPositionByIndex()
 		{
 			if (currentIndex < 0)
+			{
 				currentIndex = slideElements.length - 1
+			}
 			else if (currentIndex > slideElements.length - 1)
+			{
 				currentIndex = 0
+			}
 
 			const slideElementWidth = slideElements[0].offsetWidth
 			currentTranslate = currentIndex * -slideElementWidth + (slidesWrapper.offsetWidth - slideElementWidth) / 2
-			// if (currentTranslate > 0) currentTranslate = 0
 			prevTranslate = currentTranslate
 
 			sliderElement.querySelectorAll('.active')
-				.forEach(e => e.classList.remove('active'))
+				.forEach(element => element.classList.remove('active'))
 
-			Array.from(sliderElement.querySelectorAll('[data-slide-set="' + (currentIndex + 1) + '"]'))
-				.forEach(dot => {
-					dot.classList.add('active')
-				});
+			const slideId = currentIndex + 1
+			sliderElement.querySelectorAll('[data-slide-id="' + (slideId) + '"], [data-slide-set="' + (slideId) + '"]')
+				.forEach(element => element.classList.add('active'))
 
 			setSliderPosition()
 		}
@@ -143,7 +162,7 @@
 		}
 	}
 
-	Array.from(document.querySelectorAll('[data-slider]'))
-		.forEach(e => init(e))
+	document.querySelectorAll('[data-slider]')
+		.forEach(element => init(element))
 
 })();
