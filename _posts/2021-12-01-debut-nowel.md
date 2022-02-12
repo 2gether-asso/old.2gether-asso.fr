@@ -24,7 +24,7 @@ _**L'argent est dépensable en cartes cadeaux Steam et/ou Amazon**_
 - Il faut que les effets des potions soit tous différents !
 - Il faut que le screen comporte quelque chose permettant de validé qu'il c'est produit sur le serveur (le scoreboard par exemple)
 
-## 01/01/2021 - 20H00 :
+## 01/12/2021 - 20H00 :
 > **Sauvons le Noël de 2GETHER !**
 > 
 > Vous souhaitez participer ? Manifestez-vous sur le discord pour que l'un d'eux inscrive votre équipe au jeu !
@@ -36,7 +36,7 @@ _**L'argent est dépensable en cartes cadeaux Steam et/ou Amazon**_
 > La première équipe à réunir assez de preuves pour valider le bingo sera la gagnante !
 > Le gain de l'événement sera à partager et les modalités de ca partage sera votre responsabilité bien sûr.
 
-## 01/01/2021 - 20H30 :
+## 01/12/2021 - 20H30 :
 > Sauvons **ensemble** le Noël de 2GETHER !
 > 
 > L'union fait la force et c'est pourquoi un groupuscule 2GETHER cherche à vous rassembler pour y parvenir plus rapidement !
