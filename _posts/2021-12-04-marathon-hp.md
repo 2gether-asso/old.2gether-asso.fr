@@ -7,7 +7,7 @@ categories: [annonces]
 tags: [marathon]
 image: /assets/img/posts/marathonHp.png
 
-excerpt: "A l'occasion de l'anniversaire de la saga, regardons ensemble les films !'"
+excerpt: "A l'occasion de l'anniversaire de la saga, regardons ensemble les films !"
 ---
 
 ## Plot de base :

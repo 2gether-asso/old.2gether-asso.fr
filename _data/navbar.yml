@@ -3,14 +3,17 @@ navbar-left:
   url: /
 - title: Nous
   url: /about
-- title: Créateurs
-  url: /creators
+#- title: Créateurs
+#  url: /creators
 
 navbar-right:
-- title: Activités
-  url: /activities
+#- title: Activités
+#  url: /activities
+#- title: Projets
+#  url: /projects
+#  sublinks:
 - title: Serveurs
-  url: /servers
+  url:  /servers
 - title: Streams et Vidéos
   url: /tv
 
