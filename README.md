@@ -1,6 +1,15 @@
+> **Warning**:  
+> This project is for an older version and discontinued. The repository is archived and unsupported.  
+> See the repository for the **latest version**: [github.com/2gether-asso/2gether-asso.fr](https://github.com/2gether-asso/2gether-asso.fr).
+
+> **Note**:  
+> See the website at **this version**: [old.2gether-asso.fr](https://old.2gether-asso.fr/).
+
+---
+
 # 2gether-asso.fr
 
-Site internet de l'association 2GETHER: [2gether-asso.fr](https://2gether-asso.fr/).
+Site internet de l'association 2GETHER: [2gether-asso.fr](https://www.2gether-asso.fr/).
 
 
 ## Licence
